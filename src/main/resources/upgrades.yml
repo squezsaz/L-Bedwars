@@ -1,0 +1,126 @@
+# ========================================
+# L-BedWars - Takım Yükseltme Yapılandırması
+# ========================================
+
+upgrades:
+  sharpness:
+    icon: DIAMOND_SWORD
+    slot: 19
+    max-level: 3
+    costs:
+      - currency: DIAMOND
+        amount: 4
+      - currency: DIAMOND
+        amount: 8
+      - currency: DIAMOND
+        amount: 16
+    effects:
+      - SHARPNESS:1
+      - SHARPNESS:2
+      - SHARPNESS:3
+
+  protection:
+    icon: DIAMOND_CHESTPLATE
+    slot: 20
+    max-level: 3
+    costs:
+      - currency: DIAMOND
+        amount: 5
+      - currency: DIAMOND
+        amount: 10
+      - currency: DIAMOND
+        amount: 20
+    effects:
+      - PROTECTION:1
+      - PROTECTION:2
+      - PROTECTION:3
+
+  haste:
+    icon: GOLDEN_PICKAXE
+    slot: 21
+    max-level: 2
+    costs:
+      - currency: DIAMOND
+        amount: 4
+      - currency: DIAMOND
+        amount: 8
+    effects:
+      - EFFICIENCY:1
+      - EFFICIENCY:2
+
+  forge:
+    icon: FURNACE
+    slot: 22
+    max-level: 4
+    costs:
+      - currency: DIAMOND
+        amount: 2
+      - currency: DIAMOND
+        amount: 4
+      - currency: DIAMOND
+        amount: 6
+      - currency: DIAMOND
+        amount: 8
+    effects:
+      - FORGE:1
+      - FORGE:2
+      - FORGE:3
+      - FORGE:4
+    forge-levels:
+      - level: 1
+        iron-rate: 0.5
+        gold-rate: 0.0
+      - level: 2
+        iron-rate: 1.0
+        gold-rate: 0.5
+      - level: 3
+        iron-rate: 1.5
+        gold-rate: 1.0
+      - level: 4
+        iron-rate: 2.0
+        gold-rate: 1.5
+
+  heal-pool:
+    icon: BEACON
+    slot: 23
+    max-level: 1
+    costs:
+      - currency: DIAMOND
+        amount: 3
+    effects:
+      - REGENERATION:1
+
+  dragon-buff:
+    icon: DRAGON_EGG
+    slot: 24
+    max-level: 1
+    costs:
+      - currency: DIAMOND
+        amount: 5
+    effects:
+      - DRAGON_DAMAGE:1.5
+
+traps:
+  menu-slot: 25
+
+  it-is-a-trap:
+    icon: TRIPWIRE_HOOK
+    slot: 19
+    cost:
+      currency: DIAMOND
+      amount: 2
+    effects:
+      - BLINDNESS:1:8
+      - SLOWNESS:1:8
+      - GLOWING:1:8
+    duration: 30
+
+  miner-trap:
+    icon: STONE_PICKAXE
+    slot: 20
+    cost:
+      currency: DIAMOND
+      amount: 1
+    effects:
+      - MINING_FATIGUE:2:10
+    duration: 20

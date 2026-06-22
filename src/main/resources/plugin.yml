@@ -1,0 +1,41 @@
+name: L-BedWars
+version: 1.0.0
+main: com.lbedwars.LBedWars
+api-version: 1.19
+folia-supported: true
+author: L-BedWars
+description: Gelişmiş BedWars eklentisi - Advanced BedWars plugin
+softdepend:
+  - PlaceholderAPI
+  - Vault
+  - NoteBlockAPI
+  - Parties
+
+commands:
+  bedwars:
+    description: Ana BedWars komutu
+    aliases: [bw]
+    usage: /<command> <args>
+  bedwarsadmin:
+    description: BedWars admin komutu
+    aliases: [bwa, bwadmin]
+    usage: /<command> <args>
+    permission: bedwars.admin
+  setup:
+    description: Arena kurulum komutu
+    usage: /<command> <args>
+    permission: bedwars.setup
+
+permissions:
+  bedwars.play:
+    description: Oyuncu izinleri
+    default: true
+  bedwars.admin:
+    description: Admin izinleri
+    default: op
+  bedwars.setup:
+    description: Harita kurulum izni
+    default: op
+  bedwars.bypass:
+    description: Oyun engellemelerini atla
+    default: op

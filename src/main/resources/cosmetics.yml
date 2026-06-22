@@ -1,0 +1,61 @@
+# ========================================
+# L-BedWars - Kozmetik Yapılandırması
+# ========================================
+# Fiyatlar buradan değiştirilebilir.
+# Prices can be changed here.
+# Vault ekonomisi (para) kullanılır.
+# "none" (kapalı) her zaman ücretsizdir.
+
+prices:
+  kill-effects:
+    explosion: 1000
+    lightning: 2000
+    flame: 1500
+    heart: 2000
+    note: 2500
+    slime: 3000
+    snow: 3500
+    blood: 4000
+  victory-dances:
+    fireworks: 5000
+    lightning: 4000
+    explosion: 3000
+    rainbow: 6000
+  trails:
+    flame: 1500
+    enchantment: 2000
+    cloud: 1000
+    snow: 1500
+    heart: 2500
+    lava: 2000
+    crit: 1000
+    speed: 3000
+  victory-songs:
+    example1: 5000
+    example2: 5000
+    example3: 5000
+
+# Victory Songs (zafer müzikleri)
+# .nbs dosyalarını plugins/L-BedWars/songs/ klasörüne koyun
+# Place .nbs files in plugins/L-BedWars/songs/ folder
+victory-songs:
+  enabled: true
+  # true: tüm arena oyuncuları duyar / all arena players hear it
+  # false: sadece satın alan oyuncu duyar / only the owner hears it
+  broadcast: false
+  songs:
+    example1:
+      enabled: true
+      file: "example1.nbs"
+      name: "&6Example Song 1"
+      volume: 1.0
+    example2:
+      enabled: true
+      file: "example2.nbs"
+      name: "&aExample Song 2"
+      volume: 1.0
+    example3:
+      enabled: true
+      file: "example3.nbs"
+      name: "&eExample Song 3"
+      volume: 1.0

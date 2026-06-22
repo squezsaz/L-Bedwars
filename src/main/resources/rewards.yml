@@ -1,0 +1,25 @@
+# ========================================
+# L-BedWars - Ödül Yapılandırması
+# /bwa reward ile düzenlenebilir
+# ========================================
+# Günlük ödül ayarları
+daily-reward:
+  enabled: true
+  reward-xp: 100
+  reward-coins: 50
+  # Vault ekonomisi ile verilecek para (0 = kapalı)
+  reward-money: 0.0
+  # Bekleme süresi (saat cinsinden, 24 = günde 1)
+  cooldown-hours: 24
+
+# Oyun içi ödüller (kazanma, öldürme vb)
+game-rewards:
+  kill-xp: 10
+  win-xp: 50
+  bed-break-xp: 25
+  final-kill-xp: 15
+  # Vault parası
+  kill-money: 0.0
+  win-money: 5.0
+  bed-break-money: 0.0
+  final-kill-money: 0.0

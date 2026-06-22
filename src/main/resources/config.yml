@@ -1,0 +1,570 @@
+# ========================================
+# L-BedWars - Main Configuration File
+# ========================================
+# Language: tr (Turkish) / en (English)
+language: en
+
+
+
+# Storage Type: YAML, SQLite, MySQL
+storage:
+  type: YAML
+  mysql:
+    host: localhost
+    port: 3306
+    database: bedwars
+    username: root
+    password: ""
+    pool-size: 10
+
+# Game Settings
+game:
+  # Game start countdown (seconds)
+  start-countdown: 15
+  # Game end restart delay (seconds)
+  restart-delay: 10
+  # Time before players are sent to main lobby after match ends (seconds)
+  end-lobby-delay: 20
+  # Match time (seconds, 0 = unlimited)
+  max-game-time: 3600
+  # Player waiting time (seconds)
+  waiting-time: 60
+  # Minimum players (varies by mode)
+  min-players-solo: 2
+  min-players-duo: 4
+  min-players-trio: 6
+  min-players-quad: 8
+
+# Proxy Mode (BungeeCord/Velocity)
+proxy-mode:
+  # Enable proxy mode (disables local lobby teleport, uses BungeeCord/Velocity)
+  enabled: false
+  # End action: restart or stop (what to do with server after all players leave)
+  end-action: restart
+  # Lobby servers to send players after match (randomly picked)
+  lobby-servers:
+    - lobby-01
+    - lobby-02
+  # MOTD settings for server list ping
+  motd:
+    # Enable custom MOTD when proxy mode is on (default: false)
+    enabled: false
+    waiting:
+      line1: '&aL-BedWars &7- &eWaiting...'
+      line2: '&7Map: {map}'
+      max-players: 100
+    waiting_full:
+      line1: '&cL-BedWars &7- &6Full!'
+      line2: '&7Map: {map}'
+      max-players: 100
+    running:
+      line1: '&aL-BedWars &7- &aIn Game'
+      line2: '&7Map: {map}'
+      max-players: 100
+    rebuilding:
+      line1: '&eL-BedWars &7- &eRebuilding...'
+      line2: '&7Please wait...'
+      max-players: 0
+    disabled:
+      line1: '&cL-BedWars &7- &cDisabled'
+      line2: '&7Coming soon...'
+      max-players: 0
+  # World template folder (copied over arena world on server start when proxy mode is enabled)
+  world-template: world_template
+  # Unique name for this game server (used in socket status updates)
+  server-name: server-1
+  # Lobby proxy TCP addresses (host:port) for arena status updates (tries in order, cycles on reconnect)
+  lobby-addresses:
+    - "localhost:5000"
+  # Shared secret for socket authentication (must match L-BedWarsProxy config)
+  socket-token: "change-me"
+
+# Arena Settings
+arena:
+  # Hunger system (false = disabled, players don't get hungry)
+  hunger: false
+
+# Blocked blocks (players cannot place these)
+  blocked-blocks:
+    - BEDROCK
+    - END_PORTAL_FRAME
+    - RESPAWN_ANCHOR
+
+# Compass Tracker Settings
+# Players get a tracker compass in their last hotbar slot when the game starts.
+# When only min-teams teams remain, they can right-click enemy players to track them.
+# The actionbar shows distance and direction of tracked enemies.
+compass-tracker:
+  # Enable the compass tracker feature
+  enabled: true
+  # Cost to track one enemy player
+  cost: 2
+  # Currency item for payment
+  currency: EMERALD
+  # Minimum remaining teams for tracker to be usable (e.g. 2 = final fight, 3 = last 3 teams)
+  min-teams: 2
+  # Actionbar update interval (in ticks, 20 = 1 second)
+  update-interval: 10
+
+# TNT Settings
+tnt:
+  # TNT explosion damage (0 = no damage)
+  damage: 4.0
+
+# TNT Jump Settings
+tnt-jump:
+  enabled: true
+  # Jump power (Y-axis velocity)
+  power: 2.5
+  # Explosion radius
+  radius: 4.0
+  # Take damage from explosion
+  take-damage: false
+  # Show countdown in actionbar
+  actionbar: true
+
+# Golem Settings
+golem:
+  # Golem movement speed (default: 0.25)
+  speed: 0.25
+  # Follow range (blocks, 0 = unlimited)
+  follow-range: 16
+  # Golem health
+  health: 80
+  # Name visibility
+  show-name: true
+  # Golem spawn delay (seconds, 0 = no delay)
+  delay: 30
+  # Collision enabled?
+  collidable: true
+  # Damage to enemy players (0 = no damage)
+  damage: 4.0
+
+# PvP Mode
+# MODERN: 1.9+ (attack speed/cooldown)
+# CLASSIC: 1.8 (fast hits)
+pvp-mode: CLASSIC
+
+# Generator Settings
+generators:
+  # Max items that can stack on ground (0 = unlimited)
+  max-stack:
+    iron: 64
+    gold: 32
+    diamond: 8
+    emerald: 4
+
+# Diamond upgrade times (by mode, in seconds)
+diamond-upgrade-times:
+  solo: [300, 600, 900]
+  duo: [300, 600, 900]
+  trio: [180, 420, 720]
+  quad: [120, 360, 600]
+# Emerald upgrade times (by mode, in seconds)
+emerald-upgrade-times:
+  solo: [360, 720, 1080]
+  duo: [360, 720, 1080]
+  trio: [240, 540, 900]
+  quad: [180, 420, 720]
+
+# Bed Protection Settings
+bed-protection:
+  enabled: true
+  # Effect given to team members after bed is destroyed
+  destroy-effect: WITHER
+  destroy-effect-duration: 10
+
+# Dragon spawn times (by mode, in seconds)
+# Dragons spawn at each team's spawn point, one per team
+# and attack enemy players
+dragon-spawn-times:
+  solo: 600
+  duo: 600
+  trio: 480
+  quad: 420
+
+# Scoreboard
+scoreboard:
+  enabled: true
+  update-interval: 2
+  hide-numbers: true
+  # Date format in match scoreboard (Java DateTimeFormatter pattern)
+  # Turkey example: d MMMM yyyy HH:mm  -> "12 Haziran 2026 15:33"
+  date-format: "d MMMM yyyy HH:mm"
+  # Locale for date formatting (language tag)
+  # Common options:
+  #   tr-TR (Türkçe),  en-US (English US),  en-GB (English UK),
+  #   de-DE (Deutsch),  fr-FR (Français),    es-ES (Español),
+  #   ru-RU (Русский),  ar-SA (العربية),     ja-JP (日本語)
+  date-locale: "tr-TR"
+  # Main lobby scoreboard
+  lobby:
+    enabled: true
+    worlds:
+      - "world"
+  # Waiting lobby scoreboard (in arena)
+  waiting:
+    enabled: true
+
+# Level System
+levels:
+  enabled: true
+  xp-per-kill: 10
+  xp-per-win: 50
+  xp-per-bed-break: 25
+  xp-per-final-kill: 15
+
+# Daily Reward
+daily-reward:
+  enabled: true
+  reward-xp: 100
+  reward-coins: 50
+
+# NPC Settings
+npc:
+  # Show shop NPCs?
+  show-in-lobby: true
+  # NPC names
+  shop-name: "&aMağaza &7(Shop)"
+  upgrade-name: "&6Takım Yükseltme &7(Team Upgrade)"
+
+# Particle Settings
+particles:
+  enabled: true
+  diamond-generator: TRUE
+  emerald-generator: TRUE
+  kill-effect: TRUE
+
+# Hologram Settings
+holograms:
+  enabled: true
+  generator-hologram: true
+  leaderboard-hologram: true
+
+# Generator spawn delays (seconds) and amounts per forge upgrade level
+# level-1 = no upgrade, level-2/3/4 = forge level
+# delay: item spawn interval (seconds)
+# amount: items per spawn
+# If not defined here, the old system (generator-delays + upgrade-reduction) is used
+forge:
+  iron:
+    solo:
+      level-1:
+        delay: 24
+        amount: 1
+      level-2:
+        delay: 20
+        amount: 1
+      level-3:
+        delay: 16
+        amount: 1
+      level-4:
+        delay: 12
+        amount: 1
+    duo:
+      level-1:
+        delay: 24
+        amount: 1
+      level-2:
+        delay: 20
+        amount: 1
+      level-3:
+        delay: 16
+        amount: 1
+      level-4:
+        delay: 12
+        amount: 1
+    trio:
+      level-1:
+        delay: 20
+        amount: 1
+      level-2:
+        delay: 17
+        amount: 1
+      level-3:
+        delay: 14
+        amount: 1
+      level-4:
+        delay: 11
+        amount: 1
+    quad:
+      level-1:
+        delay: 16
+        amount: 1
+      level-2:
+        delay: 13
+        amount: 1
+      level-3:
+        delay: 10
+        amount: 1
+      level-4:
+        delay: 7
+        amount: 1
+  gold:
+    solo:
+      level-1:
+        delay: 8
+        amount: 1
+      level-2:
+        delay: 7
+        amount: 1
+      level-3:
+        delay: 6
+        amount: 1
+      level-4:
+        delay: 5
+        amount: 1
+    duo:
+      level-1:
+        delay: 8
+        amount: 1
+      level-2:
+        delay: 7
+        amount: 1
+      level-3:
+        delay: 6
+        amount: 1
+      level-4:
+        delay: 5
+        amount: 1
+    trio:
+      level-1:
+        delay: 7
+        amount: 1
+      level-2:
+        delay: 6
+        amount: 1
+      level-3:
+        delay: 5
+        amount: 1
+      level-4:
+        delay: 4
+        amount: 1
+    quad:
+      level-1:
+        delay: 7
+        amount: 1
+      level-2:
+        delay: 6
+        amount: 1
+      level-3:
+        delay: 5
+        amount: 1
+      level-4:
+        delay: 4
+        amount: 1
+  diamond:
+    solo:
+      level-1:
+        delay: 30
+        amount: 1
+      level-2:
+        delay: 20
+        amount: 1
+      level-3:
+        delay: 15
+        amount: 1
+      level-4:
+        delay: 10
+        amount: 1
+    duo:
+      level-1:
+        delay: 30
+        amount: 1
+      level-2:
+        delay: 20
+        amount: 1
+      level-3:
+        delay: 15
+        amount: 1
+      level-4:
+        delay: 10
+        amount: 1
+    trio:
+      level-1:
+        delay: 25
+        amount: 1
+      level-2:
+        delay: 15
+        amount: 1
+      level-3:
+        delay: 10
+        amount: 1
+      level-4:
+        delay: 5
+        amount: 1
+    quad:
+      level-1:
+        delay: 20
+        amount: 1
+      level-2:
+        delay: 10
+        amount: 1
+      level-3:
+        delay: 5
+        amount: 1
+      level-4:
+        delay: 5
+        amount: 1
+  emerald:
+    solo:
+      level-1:
+        delay: 60
+        amount: 1
+      level-2:
+        delay: 50
+        amount: 1
+      level-3:
+        delay: 45
+        amount: 1
+      level-4:
+        delay: 40
+        amount: 1
+    duo:
+      level-1:
+        delay: 60
+        amount: 1
+      level-2:
+        delay: 50
+        amount: 1
+      level-3:
+        delay: 45
+        amount: 1
+      level-4:
+        delay: 40
+        amount: 1
+    trio:
+      level-1:
+        delay: 50
+        amount: 1
+      level-2:
+        delay: 40
+        amount: 1
+      level-3:
+        delay: 35
+        amount: 1
+      level-4:
+        delay: 30
+        amount: 1
+    quad:
+      level-1:
+        delay: 40
+        amount: 1
+      level-2:
+        delay: 30
+        amount: 1
+      level-3:
+        delay: 25
+        amount: 1
+      level-4:
+        delay: 20
+        amount: 1
+
+# Tab List (Header/Footer & Player Names)
+tablist:
+  # Enable tab list header/footer and custom player names
+  enabled: false
+  # Update interval (ticks, 20 = 1 second)
+  update-interval: 20
+  # Header format (supports PlaceholderAPI placeholders)
+  # Placeholders: {player}, {online}, {max}, {map}, {state}, {players}, {max-players}
+  header: "&6&lL-BedWars\n&7{player}"
+  # Footer format
+  footer: "&7Online: &a{online}&7/&a{max}"
+  # Player name format in tab list (set to "" to disable custom names)
+  # {player} = raw name, {display-name} = vanilla display name
+  # {team-color} = team color (only in arena), {ping} = player ping
+  # PlaceholderAPI placeholders also work: %luckperms_prefix%, %vault_prefix%, etc.
+  player-name-format: "{team-color}{player}"
+  # Sort players by team color in tab list (same team players appear grouped together)
+  sort-by-team: true
+
+# Chat Settings
+# Note: PlaceholderAPI placeholders can be used in format strings.
+# e.g. "%luckperms_prefix%{player}&f: {message}" or "%vault_prefix%{player}&f: {message}"
+chat:
+  enabled: true
+  global-prefix: "!"
+  team-format: "{player}&f: {message}"
+  global-format: "&a[G] {player}&f: {message}"
+  waiting-format: "&7[Lobby] {player}&f: {message}"
+
+# Leaderboard
+leaderboard:
+  enabled: true
+  update-interval: 60
+  size: 10
+
+# Cosmetics
+cosmetics:
+  # Where trail effects work: ALL (all worlds), ARENA (arenas only)
+  trail-mode: ARENA
+
+# Sound Settings (each sound can be toggled individually)
+sounds:
+  bed-break:
+    enabled: true
+    sound: ENTITY_ITEM_PICKUP
+    volume: 0.5
+    pitch: 1.0
+  countdown:
+    enabled: true
+    sound: BLOCK_NOTE_BLOCK_HAT
+    volume: 0.5
+    pitch: 0.6
+  game-start:
+    enabled: true
+    sound: ENTITY_ENDER_DRAGON_GROWL
+    volume: 1.0
+    pitch: 1.0
+  item-buy:
+    enabled: true
+    sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    volume: 0.5
+    pitch: 1.0
+  upgrade-buy:
+    enabled: true
+    sound: ENTITY_PLAYER_LEVELUP
+    volume: 0.5
+    pitch: 1.0
+  respawn-tick:
+    enabled: true
+    sound: BLOCK_NOTE_BLOCK_HAT
+    volume: 0.3
+    pitch: 0.8
+  respawn-done:
+    enabled: true
+    sound: ENTITY_PLAYER_LEVELUP
+    volume: 0.5
+    pitch: 1.0
+  bed-break-enemy:
+    enabled: true
+    sound: ENTITY_ENDER_DRAGON_GROWL
+    volume: 1.0
+    pitch: 1.0
+  bed-destroyed:
+    enabled: true
+    sound: ENTITY_ENDER_DRAGON_GROAN
+    volume: 1.0
+    pitch: 1.0
+  trap-triggered:
+    enabled: true
+    sound: ENTITY_ENDERMAN_TELEPORT
+    volume: 1.0
+    pitch: 1.0
+  damage-indicator:
+    enabled: true
+    sound: BLOCK_NOTE_BLOCK_PLING
+    volume: 1.0
+    pitch: 2.0
+  bridge-egg:
+    enabled: true
+    sound: ENTITY_EGG_THROW
+    volume: 0.5
+    pitch: 1.0
+  invisibility-removed:
+    enabled: true
+    sound: ITEM_ARMOR_EQUIP_GENERIC
+    volume: 1.0
+    pitch: 0.8
+

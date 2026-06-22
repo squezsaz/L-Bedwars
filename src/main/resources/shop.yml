@@ -1,0 +1,205 @@
+# ========================================
+# L-BedWars - Shop Configuration (Hypixel Style)
+# ========================================
+
+categories:
+  blocks:
+    icon: WHITE_WOOL
+    slot: 10
+    items:
+      - material: WHITE_WOOL
+        amount: 16
+        price: 4
+        currency: IRON_INGOT
+      - material: TERRACOTTA
+        amount: 16
+        price: 12
+        currency: IRON_INGOT
+      - material: GLASS
+        amount: 4
+        price: 12
+        currency: IRON_INGOT
+      - material: END_STONE
+        amount: 12
+        price: 24
+        currency: IRON_INGOT
+      - material: OAK_PLANKS
+        amount: 16
+        price: 4
+        currency: GOLD_INGOT
+      - material: OBSIDIAN
+        amount: 4
+        price: 4
+        currency: EMERALD
+
+  melee:
+    icon: IRON_SWORD
+    slot: 11
+    items:
+      - material: STONE_SWORD
+        amount: 1
+        price: 10
+        currency: IRON_INGOT
+      - material: IRON_SWORD
+        amount: 1
+        price: 7
+        currency: GOLD_INGOT
+      - material: DIAMOND_SWORD
+        amount: 1
+        price: 4
+        currency: EMERALD
+      - material: STICK
+        amount: 1
+        price: 10
+        currency: GOLD_INGOT
+        name-key: shop.item.melee.knockback-stick
+        enchantments:
+          - KNOCKBACK:1
+
+  armor:
+    icon: CHAINMAIL_BOOTS
+    slot: 12
+    items:
+      - material: CHAINMAIL_BOOTS
+        amount: 1
+        price: 40
+        currency: IRON_INGOT
+        armor: true
+      - material: IRON_BOOTS
+        amount: 1
+        price: 30
+        currency: GOLD_INGOT
+        armor: true
+      - material: DIAMOND_BOOTS
+        amount: 1
+        price: 3
+        currency: EMERALD
+        armor: true
+
+  tools:
+    icon: SHEARS
+    slot: 13
+    items:
+      - material: SHEARS
+        amount: 1
+        price: 20
+        currency: IRON_INGOT
+        unbreakable: true
+      - material: WOODEN_PICKAXE
+        amount: 1
+        price: 10
+        currency: IRON_INGOT
+        enchantments:
+          - DIG_SPEED:1
+        unbreakable: true
+      - material: IRON_PICKAXE
+        amount: 1
+        price: 10
+        currency: GOLD_INGOT
+        enchantments:
+          - DIG_SPEED:2
+        unbreakable: true
+      - material: DIAMOND_PICKAXE
+        amount: 1
+        price: 3
+        currency: EMERALD
+        enchantments:
+          - DIG_SPEED:3
+        unbreakable: true
+      - material: WOODEN_AXE
+        amount: 1
+        price: 20
+        currency: IRON_INGOT
+        enchantments:
+          - DIG_SPEED:1
+        unbreakable: true
+
+  ranged:
+    icon: BOW
+    slot: 14
+    items:
+      - material: BOW
+        amount: 1
+        price: 12
+        currency: GOLD_INGOT
+        unbreakable: true
+      - material: BOW
+        amount: 1
+        price: 24
+        currency: GOLD_INGOT
+        name-key: shop.item.ranged.power-1
+        enchantments:
+          - ARROW_DAMAGE:1
+        unbreakable: true
+      - material: BOW
+        amount: 1
+        price: 6
+        currency: EMERALD
+        name-key: shop.item.ranged.power-2
+        enchantments:
+          - ARROW_DAMAGE:2
+        unbreakable: true
+      - material: ARROW
+        amount: 8
+        price: 2
+        currency: GOLD_INGOT
+
+  potions:
+    icon: POTION
+    slot: 15
+    items:
+      - material: POTION
+        amount: 1
+        price: 1
+        currency: EMERALD
+        potion-type: SPEED
+        potion-level: 2
+        potion-duration: 45
+        name-key: shop.item.potion.speed-2
+      - material: POTION
+        amount: 1
+        price: 1
+        currency: EMERALD
+        potion-type: JUMP
+        potion-level: 5
+        potion-duration: 45
+        name-key: shop.item.potion.jump-5
+      - material: POTION
+        amount: 1
+        price: 1
+        currency: EMERALD
+        potion-type: INVISIBILITY
+        potion-duration: 30
+        name-key: shop.item.potion.invisibility
+
+  utility:
+    icon: TNT
+    slot: 16
+    items:
+      - material: TNT
+        amount: 1
+        price: 4
+        currency: GOLD_INGOT
+      - material: WATER_BUCKET
+        amount: 1
+        price: 3
+        currency: GOLD_INGOT
+      - material: ENDER_PEARL
+        amount: 1
+        price: 4
+        currency: EMERALD
+      - material: FIRE_CHARGE
+        amount: 1
+        price: 20
+        currency: IRON_INGOT
+        name-key: shop.item.utility.fireball
+      - material: EGG
+        amount: 1
+        price: 4
+        currency: GOLD_INGOT
+        name-key: shop.item.utility.bridge-egg
+      - material: EGG
+        amount: 1
+        price: 3
+        currency: EMERALD
+        name-key: shop.item.utility.demir-golem
