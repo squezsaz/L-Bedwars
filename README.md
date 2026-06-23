@@ -340,6 +340,7 @@ In proxy mode, the proxy plugin connects directly to MySQL (`player_stats` table
 | Vault | Plugin | No (economy limited without) |
 | PlaceholderAPI | Plugin | No (placeholders unavailable without) |
 | Parties API | Plugin | No (party features disabled without) |
+| NoteBlockAPI | Plugin | |
 
 ## Installation
 
