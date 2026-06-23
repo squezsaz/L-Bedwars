@@ -339,7 +339,7 @@ In proxy mode, the proxy plugin connects directly to MySQL (`player_stats` table
 | Paper/Spigot 1.19+ | Server | Yes |
 | Vault | Plugin | No (economy limited without) |
 | PlaceholderAPI | Plugin | No (placeholders unavailable without) |
-| Parties API | Plugin | No (party features disabled without) |
+| Parties | Plugin | No (party features disabled without) |
 | NoteBlockAPI | Plugin | |
 
 ## Installation
