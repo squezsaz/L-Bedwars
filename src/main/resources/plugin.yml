@@ -3,7 +3,7 @@ version: 1.0.0
 main: com.lbedwars.LBedWars
 api-version: 1.19
 folia-supported: true
-author: L-BedWars
+author: squezsaz
 description: Gelişmiş BedWars eklentisi - Advanced BedWars plugin
 softdepend:
   - PlaceholderAPI
